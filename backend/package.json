@@ -1,0 +1,17 @@
+{
+    "name": "lastfm-top-albums-tracker",
+    "version": "1.0.0",
+    "description": "backend for website tracking users' top albums on lastfm",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index"
+    },
+    "author": "microsocks",
+    "license": "ISC",
+    "dependencies": {
+      "discord.js": "^11.5.1",
+      "dotenv": "^8.2.0",
+      "lastfm": "^0.9.3",
+      "sleep": "^6.1.0"
+    }
+  }
