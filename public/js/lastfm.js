@@ -10,7 +10,7 @@ function httpGet(url)
     return xmlHttp.responseText;
 }
 
-var userList = httpGet('http://localhost:3000/backend').split(" ");
+var userList = httpGet('backend').split(" ");
 
 if (userList[0] == "") {
   throw new Error("No Users")
@@ -24,7 +24,7 @@ function submitUser() {
   var user = document.getElementById("userText").value;
   // submit user to node server
   var xhttp = new XMLHttpRequest();
-  xhttp.open("POST", "http://localhost:3000/backend", true);
+  xhttp.open("POST", "backend", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("user=" + user);
   // reload page
