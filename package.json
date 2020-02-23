@@ -4,7 +4,7 @@
   "description": "backend for website tracking users' top albums on lastfm",
   "main": "index.js",
   "scripts": {
-    "start": "node backend/index"
+    "start": "node server.js"
   },
   "author": "microsocks",
   "license": "ISC",
