@@ -43,13 +43,18 @@ function addUserAlbums(username) {
     { user: username, period: "7day" },
     {
       success: function(data) {
+        // Test if no albums exist
+        if (data.topalbums.album.length == 0) {
+          usersParsed++;
+          if (usersParsed == userList.length) {
+            sort();
+          }
+          return;
+        }
+        console.log(data.topalbums.album.length);
         // Add top 25 albums to topAlbums array
         for (i = 0; i < 25; i++) {
           var duplicate = false;
-          // Test if no albums exist
-          if (data.topalbums.album.length == 0) {
-            return;
-          }
           // Store album data in object
           var currentAlbum = new Album();
           currentAlbum.name = data.topalbums.album[i].name;

@@ -37,11 +37,10 @@ app.post('/backend', function (req, res) {
     if (res2.statusCode == 200) {
         const fs = require('fs');
         // Check if user already exists
-        fs.readFile('users.txt', function (err, data) {
-            if (err) throw err;
-            if(!(data.indexOf(user) >= 0)) {
-             // Write user to file
-             var users = fs.readFileSync('users.txt');
+        var users = fs.readFileSync('users.txt', 'utf8');
+        if (!(users.toLowerCase().includes(user.toLowerCase()))) {
+          // Write user to file
+          var users = fs.readFileSync('users.txt');
              if (users == "") {
                 fs.appendFile('users.txt', user, function (err) {
                   if (err) throw err;
@@ -51,8 +50,7 @@ app.post('/backend', function (req, res) {
                   if (err) throw err;
                 });
              }
-            }
-          });
+        }
     }
   })
   req2.on('error', error => {
