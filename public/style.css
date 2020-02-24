@@ -16,6 +16,18 @@ body {
   font-family: "Titillium Web", sans-serif;
 }
 
+input {
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+}
+
+button {
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+}
+
 /*--------------------
 Leaderboard
 --------------------*/
